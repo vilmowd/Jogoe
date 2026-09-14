@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Checkout — Jogoe</title>
   <link rel="icon" href="assets/jogoe.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,16 +33,19 @@
           <p class="lede">To take real card payments, paste your Stripe Payment Link into <code>js/paywall.js</code> as <code>stripePaymentLink</code>.</p>
         </form>
         <div>
-          <picture>
-            <source srcset="assets/faces/idle.webp" type="image/webp">
-            <img class="checkout-orb" src="assets/faces/idle.png" alt="Jogoe" width="3840" height="3840">
-          </picture>
+          <div class="orb-stage checkout-stage" data-gaze>
+            <picture>
+              <source srcset="assets/faces/idle.webp" type="image/webp">
+              <img class="checkout-orb" src="assets/faces/idle.png" alt="Jogoe" width="3840" height="3840">
+            </picture>
+          </div>
           <p class="lede">Includes the companion, Ollama setup, and the 3B local model.</p>
         </div>
       </div>
     </section>
   </div>
   <script src="js/paywall.js"></script>
+  <script src="js/site.js"></script>
   <script src="js/checkout.js"></script>
 </body>
 </html>

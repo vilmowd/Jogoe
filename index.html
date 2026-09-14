@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Jogoe — your desktop AI companion</title>
   <link rel="icon" href="assets/jogoe.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,10 +36,12 @@
       <div class="hero">
         <div class="orb-wrap" data-hero-orb>
           <div class="hero-orb-track">
-            <picture>
-              <source srcset="assets/faces/happy.webp" type="image/webp">
-              <img class="hero-orb" src="assets/faces/happy.png" alt="Jogoe, a glowing blue companion orb" width="3840" height="3840">
-            </picture>
+            <div class="orb-stage" data-gaze>
+              <picture>
+                <source srcset="assets/faces/happy.webp" type="image/webp">
+                <img class="hero-orb" src="assets/faces/happy.png" alt="Jogoe, a glowing blue companion orb" width="3840" height="3840">
+              </picture>
+            </div>
           </div>
           <div class="ground-glow"></div>
         </div>
@@ -80,31 +82,45 @@
       <p class="lede">Same companion you get after install — idle, thinking, listening, happy, working, confused, and error.</p>
       <div class="faces">
         <figure class="face face-idle" tabindex="0">
-          <picture><source srcset="assets/faces/idle.webp" type="image/webp"><img src="assets/faces/idle.png" alt="Idle Jogoe" width="3840" height="3840"></picture>
+          <div class="orb-stage" data-gaze>
+            <picture><source srcset="assets/faces/idle.webp" type="image/webp"><img src="assets/faces/idle.png" alt="Idle Jogoe" width="3840" height="3840"></picture>
+          </div>
           <figcaption>Idle</figcaption>
         </figure>
         <figure class="face face-listening" tabindex="0">
-          <picture><source srcset="assets/faces/listening.webp" type="image/webp"><img src="assets/faces/listening.png" alt="Listening Jogoe" width="3840" height="3840"></picture>
+          <div class="orb-stage" data-gaze>
+            <picture><source srcset="assets/faces/listening.webp" type="image/webp"><img src="assets/faces/listening.png" alt="Listening Jogoe" width="3840" height="3840"></picture>
+          </div>
           <figcaption>Listening</figcaption>
         </figure>
         <figure class="face face-thinking" tabindex="0">
-          <picture><source srcset="assets/faces/thinking.webp" type="image/webp"><img src="assets/faces/thinking.png" alt="Thinking Jogoe" width="3840" height="3840"></picture>
+          <div class="orb-stage" data-gaze>
+            <picture><source srcset="assets/faces/thinking.webp" type="image/webp"><img src="assets/faces/thinking.png" alt="Thinking Jogoe" width="3840" height="3840"></picture>
+          </div>
           <figcaption>Thinking</figcaption>
         </figure>
         <figure class="face face-working" tabindex="0">
-          <picture><source srcset="assets/faces/working.webp" type="image/webp"><img src="assets/faces/working.png" alt="Working Jogoe" width="3840" height="3840"></picture>
+          <div class="orb-stage">
+            <picture><source srcset="assets/faces/working.webp" type="image/webp"><img src="assets/faces/working.png" alt="Working Jogoe" width="3840" height="3840"></picture>
+          </div>
           <figcaption>Working</figcaption>
         </figure>
         <figure class="face face-happy" tabindex="0">
-          <picture><source srcset="assets/faces/happy.webp" type="image/webp"><img src="assets/faces/happy.png" alt="Happy Jogoe" width="3840" height="3840"></picture>
+          <div class="orb-stage" data-gaze>
+            <picture><source srcset="assets/faces/happy.webp" type="image/webp"><img src="assets/faces/happy.png" alt="Happy Jogoe" width="3840" height="3840"></picture>
+          </div>
           <figcaption>Happy</figcaption>
         </figure>
         <figure class="face face-confused" tabindex="0">
-          <picture><source srcset="assets/faces/confused.webp" type="image/webp"><img src="assets/faces/confused.png" alt="Confused Jogoe" width="3840" height="3840"></picture>
+          <div class="orb-stage" data-gaze>
+            <picture><source srcset="assets/faces/confused.webp" type="image/webp"><img src="assets/faces/confused.png" alt="Confused Jogoe" width="3840" height="3840"></picture>
+          </div>
           <figcaption>Confused</figcaption>
         </figure>
         <figure class="face face-error" tabindex="0">
-          <picture><source srcset="assets/faces/error.webp" type="image/webp"><img src="assets/faces/error.png" alt="Error Jogoe" width="3840" height="3840"></picture>
+          <div class="orb-stage">
+            <picture><source srcset="assets/faces/error.webp" type="image/webp"><img src="assets/faces/error.png" alt="Error Jogoe" width="3840" height="3840"></picture>
+          </div>
           <figcaption>Error</figcaption>
         </figure>
       </div>
