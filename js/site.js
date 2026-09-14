@@ -41,73 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-owned]").forEach((el) => el.classList.add("is-owned"));
   }
 
-  const gazeMarkup =
-    '<div class="gaze" aria-hidden="true">' +
-    '<span class="eye left"><span class="pupil"></span></span>' +
-    '<span class="eye right"><span class="pupil"></span></span>' +
-    "</div>";
-
   const hoverFine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
-  const clearLooking = (except) => {
-    document.querySelectorAll("[data-gaze].is-looking").forEach((stage) => {
-      if (stage === except) return;
-      stage.classList.remove("is-looking");
-      stage.closest(".face")?.classList.remove("is-looking");
-      stage.closest(".orb-wrap")?.classList.remove("is-looking");
-      stage.querySelectorAll(".pupil").forEach((pupil) => {
-        pupil.style.transform = "translate(0, 0)";
-      });
-    });
-  };
-
-  document.querySelectorAll("[data-gaze]").forEach((stage) => {
-    if (!stage.querySelector(".gaze")) {
-      stage.insertAdjacentHTML("beforeend", gazeMarkup);
-    }
-    const pupils = stage.querySelectorAll(".pupil");
-    const look = (event) => {
-      const point = event.touches ? event.touches[0] : event;
-      if (!point) return;
-      const box = stage.getBoundingClientRect();
-      const x = ((point.clientX - box.left) / box.width - 0.5) * 2;
-      const y = ((point.clientY - box.top) / box.height - 0.5) * 2;
-      const px = Math.max(-1, Math.min(1, x)) * 38;
-      const py = Math.max(-1, Math.min(1, y)) * 34;
-      pupils.forEach((pupil) => {
-        pupil.style.transform = `translate(${px}%, ${py}%)`;
-      });
-    };
-    const setLooking = (on) => {
-      stage.classList.toggle("is-looking", on);
-      stage.closest(".face")?.classList.toggle("is-looking", on);
-      stage.closest(".orb-wrap")?.classList.toggle("is-looking", on);
-      if (!on) {
-        pupils.forEach((pupil) => {
-          pupil.style.transform = "translate(0, 0)";
-        });
-      }
-    };
-    if (hoverFine) {
-      stage.addEventListener("pointerenter", () => setLooking(true));
-      stage.addEventListener("pointermove", look);
-      stage.addEventListener("pointerleave", () => setLooking(false));
-    } else {
-      stage.addEventListener("pointerdown", (event) => {
-        event.stopPropagation();
-        const next = !stage.classList.contains("is-looking");
-        clearLooking();
-        setLooking(next);
-        if (next) look(event);
-      });
-    }
-  });
-
-  document.addEventListener("pointerdown", (event) => {
-    if (event.target.closest("[data-gaze], [data-menu], [data-drawer]")) return;
-    clearLooking();
-  });
-
   const wrap = document.querySelector("[data-hero-orb]");
   const track = wrap && wrap.querySelector(".hero-orb-track");
   if (wrap && track && hoverFine) {
