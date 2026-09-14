@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogoe — your desktop AI companion</title>
+  <link rel="icon" href="assets/jogoe.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/app_icon.png" alt="">
+        JOGOE
+      </a>
+      <div class="nav-actions">
+        <a class="btn btn-market" href="#pricing" data-pay data-pay-label>Get Jogoe →</a>
+        <button class="btn btn-menu" type="button" data-menu aria-label="Menu">☰</button>
+      </div>
+    </header>
+    <nav class="drawer" data-drawer>
+      <a href="#features">Features</a>
+      <a href="#companion">The orb</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faqs">FAQs</a>
+      <a href="checkout.html">Buy & download</a>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <section class="stage">
+      <div class="hero">
+        <div class="orb-wrap" data-hero-orb>
+          <div class="hero-orb-track">
+            <picture>
+              <source srcset="assets/faces/happy.webp" type="image/webp">
+              <img class="hero-orb" src="assets/faces/happy.png" alt="Jogoe, a glowing blue companion orb" width="3840" height="3840">
+            </picture>
+          </div>
+          <div class="ground-glow"></div>
+        </div>
+        <div class="copy">
+          <h1>Jogoe</h1>
+          <p class="kicker">The desktop AI companion</p>
+          <p>A tiny glowing orb that lives on your Windows desktop, talks to a local model, searches your files, and speaks — without sending your life to the cloud.</p>
+          <p style="margin-top:22px">
+            <a class="btn btn-grad" href="checkout.html" data-pay>Unlock download</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <main class="wrap">
+    <section class="section" id="features">
+      <h2>Built to stay on your PC</h2>
+      <p class="lede">One installer. Ollama, the local model, voice, and the overlay are all handled by setup. After you pay, you download JogoeSetup.exe and you are done.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Local brain</h3>
+          <p>Runs Qwen through Ollama on your machine. Chat, tools, and memory stay on disk — not in someone else’s datacenter.</p>
+        </article>
+        <article class="card">
+          <h3>Hands on the system</h3>
+          <p>Search files, measure folders, open apps, check CPU and RAM, set volume, and send mail if you configure it.</p>
+        </article>
+        <article class="card">
+          <h3>Voice that isn’t a tin can</h3>
+          <p>Pick Jenny, Aria, Guy, and more natural voices, or keep classic Windows Zira and David fully offline.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="companion">
+      <h2>Meet the orb</h2>
+      <p class="lede">Same companion you get after install — idle, thinking, listening, happy, working, confused, and error.</p>
+      <div class="faces">
+        <figure class="face face-idle" tabindex="0">
+          <picture><source srcset="assets/faces/idle.webp" type="image/webp"><img src="assets/faces/idle.png" alt="Idle Jogoe" width="3840" height="3840"></picture>
+          <figcaption>Idle</figcaption>
+        </figure>
+        <figure class="face face-listening" tabindex="0">
+          <picture><source srcset="assets/faces/listening.webp" type="image/webp"><img src="assets/faces/listening.png" alt="Listening Jogoe" width="3840" height="3840"></picture>
+          <figcaption>Listening</figcaption>
+        </figure>
+        <figure class="face face-thinking" tabindex="0">
+          <picture><source srcset="assets/faces/thinking.webp" type="image/webp"><img src="assets/faces/thinking.png" alt="Thinking Jogoe" width="3840" height="3840"></picture>
+          <figcaption>Thinking</figcaption>
+        </figure>
+        <figure class="face face-working" tabindex="0">
+          <picture><source srcset="assets/faces/working.webp" type="image/webp"><img src="assets/faces/working.png" alt="Working Jogoe" width="3840" height="3840"></picture>
+          <figcaption>Working</figcaption>
+        </figure>
+        <figure class="face face-happy" tabindex="0">
+          <picture><source srcset="assets/faces/happy.webp" type="image/webp"><img src="assets/faces/happy.png" alt="Happy Jogoe" width="3840" height="3840"></picture>
+          <figcaption>Happy</figcaption>
+        </figure>
+        <figure class="face face-confused" tabindex="0">
+          <picture><source srcset="assets/faces/confused.webp" type="image/webp"><img src="assets/faces/confused.png" alt="Confused Jogoe" width="3840" height="3840"></picture>
+          <figcaption>Confused</figcaption>
+        </figure>
+        <figure class="face face-error" tabindex="0">
+          <picture><source srcset="assets/faces/error.webp" type="image/webp"><img src="assets/faces/error.png" alt="Error Jogoe" width="3840" height="3840"></picture>
+          <figcaption>Error</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <h2>Pay once. Download forever on this browser.</h2>
+      <div class="price-box">
+        <div>
+          <p class="amount">$19</p>
+          <p class="lede">One-time desktop license. The installer includes Jogoe, Ollama (if needed), and the fast 3B model.</p>
+          <ul>
+            <li>Windows 10/11 overlay companion</li>
+            <li>Local chat + system tools</li>
+            <li>Natural and Windows voices</li>
+            <li>Single setup wizard, no extra plugins</li>
+          </ul>
+        </div>
+        <div>
+          <a class="btn btn-grad" href="checkout.html" data-pay>Continue to checkout</a>
+          <p class="lede" style="margin-top:16px">The installer is locked until checkout completes. No account required.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faqs">
+      <h2>FAQs</h2>
+      <p class="lede">With an unwavering commitment to keeping the companion on your machine.</p>
+      <div class="faq-item open">
+        <button type="button">What do I actually download?</button>
+        <div class="answer">JogoeSetup.exe — a Windows wizard that installs the companion, Ollama if it is missing, and the Qwen 2.5 3B model so you can start chatting.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button">Does it need the internet after install?</button>
+        <div class="answer">Chat and tools run locally. Natural voices use Microsoft neural speech and need a connection. Zira and David work offline.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button">Why is there a paywall?</button>
+        <div class="answer">The installer is a paid desktop license. Checkout unlocks the file in this browser. Paste a Stripe Payment Link in js/paywall.js when you want live card charges.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button">Will it train on my files?</button>
+        <div class="answer">No. Jogoe reads folders you ask about and talks to the local Ollama model on your PC.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <div>© <span data-year></span> Jogoe</div>
+        <div>Desktop companion. Local model. One installer.</div>
+      </div>
+      <a class="contact-bubble" href="mailto:hello@jogoe.app">Contact<br>us</a>
+    </footer>
+  </main>
+
+  <script src="js/paywall.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

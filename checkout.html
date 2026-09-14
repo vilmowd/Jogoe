@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — Jogoe</title>
+  <link rel="icon" href="assets/jogoe.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html"><img src="assets/app_icon.png" alt=""> JOGOE</a>
+      <a class="btn btn-ghost" href="index.html">Back</a>
+    </header>
+
+    <section class="section">
+      <h2>Unlock Jogoe</h2>
+      <p class="lede">$19 one-time. The Windows installer stays locked until this checkout finishes.</p>
+      <div class="price-box">
+        <form class="form" id="checkout-form">
+          <div>
+            <label>Name<input name="name" autocomplete="name" required></label>
+          </div>
+          <div>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <p class="status" id="checkout-status"></p>
+          <button class="btn btn-grad" type="submit">Pay $19 and unlock download</button>
+          <p class="lede">To take real card payments, paste your Stripe Payment Link into <code>js/paywall.js</code> as <code>stripePaymentLink</code>.</p>
+        </form>
+        <div>
+          <picture>
+            <source srcset="assets/faces/idle.webp" type="image/webp">
+            <img class="checkout-orb" src="assets/faces/idle.png" alt="Jogoe" width="3840" height="3840">
+          </picture>
+          <p class="lede">Includes the companion, Ollama setup, and the 3B local model.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="js/paywall.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

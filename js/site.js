@@ -1,0 +1,72 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const year = document.querySelectorAll("[data-year]");
+  year.forEach((node) => {
+    node.textContent = String(new Date().getFullYear());
+  });
+
+  document.querySelectorAll("[data-pay]").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      goPay();
+    });
+  });
+
+  document.querySelectorAll(".faq-item button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".faq-item");
+      const open = item.classList.contains("open");
+      document.querySelectorAll(".faq-item").forEach((other) => other.classList.remove("open"));
+      if (!open) item.classList.add("open");
+    });
+  });
+
+  const menu = document.querySelector("[data-menu]");
+  const drawer = document.querySelector("[data-drawer]");
+  if (menu && drawer) {
+    menu.addEventListener("click", () => drawer.classList.toggle("open"));
+    drawer.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => drawer.classList.remove("open"));
+    });
+  }
+
+  if (hasLicense()) {
+    document.querySelectorAll("[data-owned]").forEach((el) => el.classList.add("is-owned"));
+  }
+
+  document.querySelectorAll(".face").forEach((face) => {
+    const replay = () => {
+      face.classList.remove("is-replay");
+      void face.offsetWidth;
+      face.classList.add("is-replay");
+    };
+    face.addEventListener("mouseenter", replay);
+    face.addEventListener("focusin", replay);
+    face.addEventListener("mouseleave", () => face.classList.remove("is-replay"));
+    face.addEventListener("animationend", (event) => {
+      if (event.target && event.target.tagName === "IMG") {
+        face.classList.remove("is-replay");
+      }
+    });
+  });
+
+  const wrap = document.querySelector("[data-hero-orb]");
+  const track = wrap && wrap.querySelector(".hero-orb-track");
+  if (wrap && track) {
+    let frame = 0;
+    const follow = (event) => {
+      const box = wrap.getBoundingClientRect();
+      const x = ((event.clientX - box.left) / box.width - 0.5) * 2;
+      const y = ((event.clientY - box.top) / box.height - 0.5) * 2;
+      if (frame) cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        wrap.classList.add("is-tracking");
+        track.style.transform = `translate3d(${x * 18}px, ${y * 14}px, 0) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 10).toFixed(2)}deg) scale(1.03)`;
+      });
+    };
+    wrap.addEventListener("mousemove", follow);
+    wrap.addEventListener("mouseleave", () => {
+      wrap.classList.remove("is-tracking");
+      track.style.transform = "";
+    });
+  }
+});
