@@ -12,39 +12,69 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelectorAll(".faq-item button").forEach((button) => {
+    const item = button.closest(".faq-item");
+    const panel = item && (item.querySelector(".answer") || document.getElementById(button.getAttribute("aria-controls")));
+    const sync = (open) => {
+      item.classList.toggle("open", open);
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      if (panel) {
+        if (open) panel.removeAttribute("hidden");
+        else panel.setAttribute("hidden", "");
+      }
+    };
+    sync(item.classList.contains("open"));
     button.addEventListener("click", () => {
-      const item = button.closest(".faq-item");
-      const open = item.classList.contains("open");
-      document.querySelectorAll(".faq-item").forEach((other) => other.classList.remove("open"));
-      if (!open) item.classList.add("open");
+      const open = button.getAttribute("aria-expanded") === "true";
+      document.querySelectorAll(".faq-item").forEach((other) => {
+        const otherButton = other.querySelector("button");
+        if (!otherButton) return;
+        const otherPanel = other.querySelector(".answer");
+        other.classList.remove("open");
+        otherButton.setAttribute("aria-expanded", "false");
+        if (otherPanel) otherPanel.setAttribute("hidden", "");
+      });
+      if (!open) sync(true);
     });
   });
 
   const menu = document.querySelector("[data-menu]");
   const drawer = document.querySelector("[data-drawer]");
+  const setMenu = (open) => {
+    if (!menu || !drawer) return;
+    drawer.classList.toggle("open", open);
+    menu.setAttribute("aria-expanded", open ? "true" : "false");
+    menu.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
   if (menu && drawer) {
     menu.addEventListener("click", (event) => {
       event.stopPropagation();
-      drawer.classList.toggle("open");
+      setMenu(!drawer.classList.contains("open"));
     });
     drawer.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => drawer.classList.remove("open"));
+      link.addEventListener("click", () => setMenu(false));
     });
     document.addEventListener("click", (event) => {
       if (!event.target.closest("[data-drawer], [data-menu]")) {
-        drawer.classList.remove("open");
+        setMenu(false);
+      }
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenu(false);
+        menu.focus();
       }
     });
   }
 
-  if (hasLicense()) {
+  if (typeof hasLicense === "function" && hasLicense()) {
     document.querySelectorAll("[data-owned]").forEach((el) => el.classList.add("is-owned"));
   }
 
   const hoverFine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const wrap = document.querySelector("[data-hero-orb]");
   const track = wrap && wrap.querySelector(".hero-orb-track");
-  if (wrap && track && hoverFine) {
+  if (wrap && track && hoverFine && !reduceMotion) {
     let frame = 0;
     const follow = (event) => {
       const box = wrap.getBoundingClientRect();

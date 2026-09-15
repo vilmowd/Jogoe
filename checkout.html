@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Checkout — Jogoe</title>
+  <meta name="description" content="Unlock the Jogoe Windows installer with a one-time $19 desktop license.">
   <link rel="icon" href="assets/jogoe.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,38 +12,53 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div class="wrap">
     <header class="nav">
-      <a class="brand" href="index.html"><img src="assets/app_icon.png" alt=""> JOGOE</a>
-      <a class="btn btn-ghost" href="index.html">Back</a>
+      <a class="brand" href="index.html"><img src="assets/app_icon.png" alt="Jogoe"> JOGOE</a>
+      <a class="btn btn-ghost" href="index.html">Back to home</a>
     </header>
 
-    <section class="section">
-      <h2>Unlock Jogoe</h2>
+    <main class="section" id="main">
+      <h1 class="page-title">Unlock Jogoe</h1>
       <p class="lede">$19 one-time. The Windows installer stays locked until this checkout finishes.</p>
       <div class="price-box">
         <form class="form" id="checkout-form">
           <div>
-            <label>Name<input name="name" autocomplete="name" required></label>
+            <label for="checkout-name">Name</label>
+            <input id="checkout-name" name="name" autocomplete="name" required>
           </div>
           <div>
-            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label for="checkout-email">Email</label>
+            <input id="checkout-email" name="email" type="email" autocomplete="email" required>
           </div>
-          <p class="status" id="checkout-status"></p>
+          <p class="status" id="checkout-status" role="status" aria-live="polite"></p>
           <button class="btn btn-grad" type="submit">Pay $19 and unlock download</button>
+          <p class="lede">By continuing you agree to the <a href="terms.html">Terms &amp; Conditions</a> and <a href="privacy.html">Privacy Policy</a>.</p>
           <p class="lede">To take real card payments, paste your Stripe Payment Link into <code>js/paywall.js</code> as <code>stripePaymentLink</code>.</p>
         </form>
         <div>
           <div class="orb-stage checkout-stage">
             <picture>
               <source srcset="assets/faces/idle.webp" type="image/webp">
-              <img class="checkout-orb" src="assets/faces/idle.png" alt="Jogoe" width="3840" height="3840">
+              <img class="checkout-orb" src="assets/faces/idle.png" alt="Jogoe waiting on the checkout page" width="3840" height="3840">
             </picture>
           </div>
-          <p class="lede">Includes the companion, Ollama setup, and the 3B local model.</p>
+          <p class="lede">Includes the companion, Ollama setup, and the 3B local model. Current installer: version 1.1.7.</p>
         </div>
       </div>
-    </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-meta">
+        <div>© <span data-year></span> Jogoe</div>
+        <nav class="legal-nav" aria-label="Legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="accessibility.html">Accessibility</a>
+        </nav>
+      </div>
+      <a class="contact-bubble" href="mailto:hello@jogoe.app">Contact<br>us</a>
+    </footer>
   </div>
   <script src="js/paywall.js"></script>
   <script src="js/site.js"></script>
