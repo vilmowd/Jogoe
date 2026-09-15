@@ -265,6 +265,29 @@ button, .btn { font-family: inherit; }
 .card h3 { margin: 0 0 8px; font-size: 20px; }
 .card p { margin: 0; color: var(--muted); line-height: 1.55; }
 
+.limits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.limits-card {
+  background: rgba(10, 14, 20, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+}
+.limits-card h3 { margin: 0 0 6px; font-size: 22px; }
+.limits-card .lede { margin-bottom: 14px; }
+.limits-card.can { border-color: rgba(94, 255, 200, 0.28); }
+.limits-card.cannot { border-color: rgba(255, 132, 132, 0.28); }
+.limits-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.limits-card li { margin: 0 0 8px; }
+
 .faces {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -500,7 +523,7 @@ input {
 }
 
 @media (max-width: 860px) {
-  .hero, .price-box, .grid, .footer { grid-template-columns: 1fr; }
+  .hero, .price-box, .grid, .limits, .footer { grid-template-columns: 1fr; }
   .hero {
     display: flex;
     flex-direction: column;

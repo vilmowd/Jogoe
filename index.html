@@ -26,6 +26,7 @@
     </header>
     <nav class="drawer" id="site-menu" data-drawer aria-label="Site">
       <a href="#features">Features</a>
+      <a href="#limits">What it can do</a>
       <a href="#companion">The orb</a>
       <a href="#pricing">Pricing</a>
       <a href="#faqs">FAQs</a>
@@ -53,7 +54,7 @@
         <div class="copy">
           <h1>Jogoe</h1>
           <p class="kicker">The desktop AI companion</p>
-          <p>A tiny glowing orb that lives on your Windows desktop, talks to a local model, searches your files, and speaks — without sending your life to the cloud.</p>
+          <p>A tiny glowing orb on your Windows desktop. It chats, tells jokes, remembers you, and helps with everyday files — it is not a command line and will not run CMD or scripts.</p>
           <p style="margin-top:22px">
             <a class="btn btn-grad" href="checkout.html" data-pay>Unlock download</a>
           </p>
@@ -72,12 +73,54 @@
           <p>Runs Qwen through Ollama on your machine. Chat, tools, and memory stay on disk — not in someone else’s datacenter.</p>
         </article>
         <article class="card">
-          <h3>Hands on the system</h3>
-          <p>Open documents, search files for a keyword, remember facts about you, and look up live info when you ask.</p>
+          <h3>Helpful on your PC</h3>
+          <p>Open a document, search files for a keyword, remember facts about you, and look up live info when you ask. It will not open Command Prompt or run scripts.</p>
         </article>
         <article class="card">
           <h3>Voice that isn’t a tin can</h3>
           <p>Pick Jenny, Aria, Guy, and more natural voices, or keep classic Windows Zira and David fully offline.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="limits">
+      <h2>What Jogoe can and cannot do</h2>
+      <p class="lede">Jogoe is a desktop companion, not a technician with a terminal. Here is the honest list.</p>
+      <div class="limits">
+        <article class="limits-card can">
+          <h3>It can</h3>
+          <p class="lede">Everyday help on this PC, in your words.</p>
+          <ul>
+            <li>Chat, tell jokes, stories, and answer questions with a local AI model</li>
+            <li>Speak out loud and listen when you use the mic</li>
+            <li>Remember facts you ask it to keep, and forget them when you say so</li>
+            <li>Tell the time and date, and check CPU, RAM, disk, or battery</li>
+            <li>Search Desktop, Documents, Downloads, and Pictures by file name</li>
+            <li>Search inside common text files for a keyword</li>
+            <li>Open a document it found in the usual app (Word, PDF, Notepad, and similar)</li>
+            <li>Open everyday apps such as Notepad, Calculator, File Explorer, Chrome, Edge, Word, Excel, Paint, or Spotify</li>
+            <li>Set or mute volume</li>
+            <li>Look up weather and simple live facts when you ask, if internet lookup is on</li>
+            <li>Send or read mail only if you set up your own email in Settings</li>
+            <li>Lock, sleep, restart, or shut down the PC — only after you confirm in a prompt</li>
+          </ul>
+        </article>
+        <article class="limits-card cannot">
+          <h3>It cannot</h3>
+          <p class="lede">It is not a hacker, admin console, or full PC takeover.</p>
+          <ul>
+            <li>Open Command Prompt, PowerShell, Windows Terminal, or any other terminal</li>
+            <li>Run commands, scripts, .bat files, or code you paste in</li>
+            <li>Install, uninstall, or update software</li>
+            <li>Hack, crack passwords, bypass logins, or break into other systems</li>
+            <li>Control other computers, other user accounts, or the web like a remote desktop</li>
+            <li>Click around Windows for you, change most system settings, or edit the registry</li>
+            <li>Browse your whole disk unprompted, or read every file by default</li>
+            <li>Read the insides of Word or PDF files yet (name search still works)</li>
+            <li>Guarantee that answers are always right — local models can be wrong</li>
+            <li>Replace a lawyer, doctor, or IT support person</li>
+            <li>Upload your chats to a Jogoe cloud, or train a public model on them</li>
+          </ul>
         </article>
       </div>
     </section>
@@ -138,9 +181,9 @@
           <p class="amount">$19</p>
           <p class="lede">One-time desktop license. The installer includes Jogoe, Ollama (if needed), and the fast 3B model.</p>
           <ul>
-            <li>Windows 10/11 overlay companion</li>
-            <li>Local chat, memory, and system tools</li>
+            <li>Local chat, jokes, memory, and everyday file help</li>
             <li>Natural and Windows voices</li>
+            <li>Not a command line — no CMD, PowerShell, or scripts</li>
             <li>Single setup wizard, no extra plugins</li>
           </ul>
         </div>
@@ -156,7 +199,7 @@
       <p class="lede">With an unwavering commitment to keeping the companion on your machine.</p>
       <div class="faq-item open">
         <button type="button" id="faq-btn-1" aria-expanded="true" aria-controls="faq-1">What do I actually download?</button>
-        <div class="answer" id="faq-1">JogoeSetup.exe (version 1.1.10) — a Windows wizard that installs the companion and Ollama if it is missing. The Qwen 2.5 3B model (~2 GB) downloads the first time you open Jogoe, so setup cannot freeze on that step.</div>
+        <div class="answer" id="faq-1">JogoeSetup.exe (version 1.1.11) — a Windows wizard that installs the companion and Ollama if it is missing. The Qwen 2.5 3B model (~2 GB) downloads the first time you open Jogoe, so setup cannot freeze on that step.</div>
       </div>
       <div class="faq-item">
         <button type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-2">Does it need the internet after install?</button>
@@ -169,6 +212,10 @@
       <div class="faq-item">
         <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-4">Will it train on my files?</button>
         <div class="answer" id="faq-4" hidden>No. Jogoe reads folders you ask about, stores memory you choose on your PC, and talks to the local Ollama model. See the <a href="privacy.html">Privacy Policy</a> for details.</div>
+      </div>
+      <div class="faq-item">
+        <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-5">Can it open Command Prompt or control my whole PC?</button>
+        <div class="answer" id="faq-5" hidden>No. Jogoe will not open CMD, PowerShell, or a terminal, and it will not run scripts or arbitrary commands. It can chat, tell jokes, open documents, search files, and launch everyday apps like Notepad. Shut down and restart need your confirmation. The full list is on this page under <a href="#limits">What Jogoe can and cannot do</a> and in the <a href="terms.html">Terms</a>.</div>
       </div>
     </section>
 
