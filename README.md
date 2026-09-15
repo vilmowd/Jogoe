@@ -12,11 +12,12 @@ Then visit http://127.0.0.1:8765/
 
 ## Download
 
-After checkout, the site unlocks [`files/JogoeSetup.exe`](files/JogoeSetup.exe) (Jogoe **1.1.7**). The wizard installs:
+After checkout, the site unlocks [`files/JogoeSetup.exe`](files/JogoeSetup.exe) (Jogoe **1.1.10**). The wizard installs:
 
 - Jogoe (desktop overlay)
 - Ollama, if it is missing
-- Qwen 2.5 3B (optional 7B on Full setup)
+
+The Qwen 2.5 3B model downloads the first time you open Jogoe (optional 7B on Full setup).
 
 To take real card payments, paste a Stripe Payment Link into `js/paywall.js` as `stripePaymentLink`.
 
