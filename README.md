@@ -12,7 +12,7 @@ Then visit http://127.0.0.1:8765/
 
 ## Download
 
-After checkout, the site unlocks [`files/JogoeSetup.exe`](files/JogoeSetup.exe) (Jogoe **1.1.11**). The wizard installs:
+After checkout, the site unlocks [`files/JogoeSetup.exe`](files/JogoeSetup.exe) (Jogoe **1.1.13**). The wizard installs:
 
 - Jogoe (desktop overlay)
 - Ollama, if it is missing
